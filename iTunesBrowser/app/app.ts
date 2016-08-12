@@ -1,29 +1,29 @@
-import { Component, ViewChild } from '@angular/core';
-import { ionicBootstrap, Platform, Nav } from 'ionic-angular';
-import { StatusBar } from 'ionic-native';
+import {Component, ViewChild} from '@angular/core';
+import {ionicBootstrap, Platform, Nav} from 'ionic-angular';
+import {StatusBar} from 'ionic-native';
 
-import { Page1 } from './pages/page1/page1';
-import { Page2 } from './pages/page2/page2';
+import {Page1} from './pages/page1/page1';
+import {Page2} from './pages/page2/page2';
 import {SearchPage} from "./pages/search/search";
 
 @Component({
   templateUrl: 'build/app.html'
 })
 class MyApp {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild(Nav) nav:Nav;
 
-  rootPage: any = SearchPage;
+  rootPage:any = SearchPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages:Array<{title:string, component:any}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform:Platform) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Page uno', component: Page1 },
-      { title: 'Page dos', component: Page2 },
-      { title: 'Search Page', component: SearchPage }
+      {title: 'Page uno', component: Page1},
+      {title: 'Page dos', component: Page2},
+      {title: 'Search Page', component: SearchPage}
     ];
 
   }
@@ -41,6 +41,7 @@ class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
 }
 
 ionicBootstrap(MyApp);

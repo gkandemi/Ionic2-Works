@@ -13,5 +13,18 @@
 </ion-header>
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let result of results">
+      <ion-thumbnail item-left>
+        <img [src]="result.artworkUrl100" />
+      </ion-thumbnail>
+      <h2 [innerText]="result.trackName"></h2>
+      <p> {{result.artistName}} </p>
+      <ion-icon item-right [name]="result.kind==='song' ? 'musical-notes' : 'film'"></ion-icon>
+      <ion-icon item-right name="person" [hidden]="result.kind!=='song'"></ion-icon>
+    </ion-item>
+  </ion-list>
+
   <button navPop>Go Back</button>
 </ion-content>
